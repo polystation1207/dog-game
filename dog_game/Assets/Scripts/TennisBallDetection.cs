@@ -9,7 +9,7 @@ public class TennisBallDetection : MonoBehaviour
     [SerializeField] float levelLoadDelay = 3f;
     [SerializeField] bool isLastLevel = false;
     [SerializeField] float ballCount;
-    [SerializeField] float fpsCount = 40;
+    [SerializeField] float fpsCount = 60;
     [SerializeField] TextMeshProUGUI myText;
     [SerializeField] TextMeshProUGUI fpsCounter;
     private void OnTriggerEnter2D(Collider2D other)
@@ -17,7 +17,7 @@ public class TennisBallDetection : MonoBehaviour
         if (other.tag == "Tennis Ball")
         {
             ballCount += 1;
-            fpsCount += 30;
+            fpsCount += 71;
             fpsCounter.text = "fps count: " + fpsCount;
             myText.text = "tennis balls: " + ballCount;
             Destroy(other.gameObject);
@@ -36,7 +36,7 @@ public class TennisBallDetection : MonoBehaviour
         {
             Time.timeScale = 0;
             ballCount += 1;
-            fpsCount -= 25;
+            fpsCount -= 75;
             fpsCounter.text = "fps count: " + fpsCount;
             myText.text = "tennis balls: " + ballCount;
             Destroy(other.gameObject);
